@@ -154,6 +154,557 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201002%20A%20+%20B%20Problem%20II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201002%20A%20+%20B%20Problem%20II/" class="post-title-link" itemprop="url">HDU 1002 A + B Problem II</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 23:00:36 / Modified: 23:33:46" itemprop="dateCreated datePublished" datetime="2020-03-02T23:00:36+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I have a very simple problem for you. Given two integers A and B, your job is to </span><br><span class="line">calculate the Sum of A + B.</span><br></pre></td></tr></table></figure>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The first line of the input contains an integer T(1&lt;&#x3D;T&lt;&#x3D;20) which means the number </span><br><span class="line">of test cases. Then T lines follow, each line consists of two positive integers, A </span><br><span class="line">and B. Notice that the integers are very large, that means you should not process </span><br><span class="line">them by using 32-bit integer. You may assume the length of each integer will not </span><br><span class="line">exceed 1000.</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">For each test case, you should output two lines. The first line is &quot;Case #:&quot;, # </span><br><span class="line">means the number of the test case. The second line is the an equation &quot;A + B &#x3D; Sum&quot;, </span><br><span class="line">Sum means the result of A + B. Note there are some spaces int the equation. Output a </span><br><span class="line">blank line between two test cases.</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">1 2</span><br><span class="line">112233445566778899 998877665544332211</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Case 1:</span><br><span class="line">1 + 2 &#x3D; 3</span><br><span class="line"></span><br><span class="line">Case 2:</span><br><span class="line">112233445566778899 + 998877665544332211 &#x3D; 1111111111111111110</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">big number addtion</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"string"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="built_in">string</span> &amp;a, <span class="built_in">string</span> &amp;b)</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 确保 a 比 b 长</span></span><br><span class="line">    <span class="keyword">if</span>(a.length()&lt;b.length())   swap(a, b);</span><br><span class="line">    reverse(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">    reverse(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">int</span> remainNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;b.length(); ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = remainNum + (a[i] - <span class="string">'0'</span>) + (b[i] - <span class="string">'0'</span>);</span><br><span class="line">        a[i] = sum % <span class="number">10</span> + <span class="string">'0'</span>;</span><br><span class="line">        remainNum = sum / <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=b.length(); i&lt;a.length(); ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = (a[i] - <span class="string">'0'</span>) + remainNum;</span><br><span class="line">        a[i] = sum % <span class="number">10</span> + <span class="string">'0'</span>;</span><br><span class="line">        remainNum = sum / <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(remainNum)</span><br><span class="line">        a = a + (<span class="keyword">char</span>)(remainNum+<span class="string">'0'</span>);</span><br><span class="line">    reverse(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=T; ++i)&#123;</span><br><span class="line">        <span class="built_in">string</span> a, b;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="built_in">string</span> res =  add(a, b);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d:\n"</span>, i);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">" + "</span> &lt;&lt; b &lt;&lt; <span class="string">" = "</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>(i!=T) <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201010%20Tempter%20of%20the%20Bone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201010%20Tempter%20of%20the%20Bone/" class="post-title-link" itemprop="url">HDU 1010 Tempter of the Bone</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:35:20" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">The doggie found a bone in an ancient maze, which fascinated him a lot. However, </span><br><span class="line">when he picked it up, the maze began to shake, and the doggie could feel the ground </span><br><span class="line">sinking. He realized that the bone was a trap, and he tried desperately to get out </span><br><span class="line">of this maze.</span><br><span class="line"></span><br><span class="line">The maze was a rectangle with sizes N by M. There was a door in the maze. At the </span><br><span class="line">beginning, the door was closed and it would open at the T-th second for a short </span><br><span class="line">period of time (less than 1 second). Therefore the doggie had to arrive at the door </span><br><span class="line">on exactly the T-th second. In every second, he could move one block to one of the </span><br><span class="line">upper, lower, left and right neighboring blocks. Once he entered a block, the </span><br><span class="line">ground of this block would start to sink and disappear in the next second. He could </span><br><span class="line">not stay at one block for more than one second, nor could he move into a visited </span><br><span class="line">block. Can the poor doggie survive? Please help him.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">The input consists of multiple test cases. The first line of each test case contains </span><br><span class="line">three integers N, M, and T (1 &lt; N, M &lt; 7; 0 &lt; T &lt; 50), which denote the sizes of the </span><br><span class="line">maze and the time at which the door will open, respectively. The next N lines give </span><br><span class="line">the maze layout, with each line containing M characters. A character is one of the </span><br><span class="line">following:</span><br><span class="line"></span><br><span class="line">&#39;X&#39;: a block of wall, which the doggie cannot enter;</span><br><span class="line">&#39;S&#39;: the start point of the doggie;</span><br><span class="line">&#39;D&#39;: the Door; or</span><br><span class="line">&#39;.&#39;: an empty block.</span><br><span class="line"></span><br><span class="line">The input is terminated with three 0&#39;s. This test case is not to be processed.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">For each test case, print in one line &quot;YES&quot; if the doggie can survive, or &quot;NO&quot; </span><br><span class="line">otherwise.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">4 4 5</span><br><span class="line">S.X.</span><br><span class="line">..X.</span><br><span class="line">..XD</span><br><span class="line">....</span><br><span class="line">3 4 5</span><br><span class="line">S.X.</span><br><span class="line">..X.</span><br><span class="line">...D</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NO</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DFS + pruning</span><br><span class="line"></span><br><span class="line">Suppose there is a map as follow: </span><br><span class="line">0 1 0 1 0 1 </span><br><span class="line">1 0 1 0 1 0 </span><br><span class="line">0 1 0 1 0 1 </span><br><span class="line">1 0 1 0 1 0 </span><br><span class="line">0 1 0 1 0 1 </span><br><span class="line"></span><br><span class="line">It&#39;s not difficult to find out:</span><br><span class="line">from 0 to 1 or from 1 to 0, cost odd steps;</span><br><span class="line">from 0 to 0 or from 1 to 1, cost even steps.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> visited[<span class="number">10</span>][<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> maze[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, t;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> <span class="built_in">step</span>, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">step</span>==t)&#123;</span><br><span class="line">        <span class="keyword">return</span> maze[i][j] == <span class="string">'D'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;n||j&lt;<span class="number">1</span>||j&gt;m||maze[i][j]==<span class="string">'X'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(visited[i][j+<span class="number">1</span>]==<span class="number">0</span>)&#123;</span><br><span class="line">        visited[i][j+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(dfs(<span class="built_in">step</span>+<span class="number">1</span>, i, j+<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        visited[i][j+<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(visited[i+<span class="number">1</span>][j]==<span class="number">0</span>)&#123;</span><br><span class="line">        visited[i+<span class="number">1</span>][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(dfs(<span class="built_in">step</span>+<span class="number">1</span>, i+<span class="number">1</span>, j))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        visited[i+<span class="number">1</span>][j] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(visited[i][j<span class="number">-1</span>]==<span class="number">0</span>)&#123;</span><br><span class="line">        visited[i][j<span class="number">-1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(dfs(<span class="built_in">step</span>+<span class="number">1</span>, i, j<span class="number">-1</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        visited[i][j<span class="number">-1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(visited[i<span class="number">-1</span>][j]==<span class="number">0</span>)&#123;</span><br><span class="line">        visited[i<span class="number">-1</span>][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(dfs(<span class="built_in">step</span>+<span class="number">1</span>, i<span class="number">-1</span>, j))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        visited[i<span class="number">-1</span>][j] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; t;</span><br><span class="line">        <span class="keyword">if</span>(!n&amp;&amp;!m&amp;&amp;!t)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(visited, <span class="number">0</span>, <span class="keyword">sizeof</span>(visited));</span><br><span class="line">        <span class="keyword">int</span> startI&#123;&#125;;</span><br><span class="line">        <span class="keyword">int</span> startJ&#123;&#125;;</span><br><span class="line">        <span class="keyword">int</span> endI&#123;&#125;;</span><br><span class="line">        <span class="keyword">int</span> endJ&#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=m; ++j)&#123;</span><br><span class="line">                <span class="built_in">cin</span> &gt;&gt; maze[i][j];</span><br><span class="line">                <span class="keyword">if</span>(maze[i][j]==<span class="string">'S'</span>)&#123;</span><br><span class="line">                    startI = i;</span><br><span class="line">                    startJ = j;</span><br><span class="line">                    visited[i][j] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(maze[i][j]==<span class="string">'D'</span>)&#123;</span><br><span class="line">                    endI = i;</span><br><span class="line">                    endJ = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((t-<span class="built_in">abs</span>(startI-endI)-<span class="built_in">abs</span>(startJ-endJ))%<span class="number">2</span>)  <span class="comment">// 奇偶剪枝</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(dfs(<span class="number">0</span>, startI, startJ))</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201009%20FatMouse'%20Trade/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201009%20FatMouse'%20Trade/" class="post-title-link" itemprop="url">HDU 1009 FatMouse' Trade</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:34:45" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FatMouse prepared M pounds of cat food, ready to trade with the cats guarding the </span><br><span class="line">warehouse containing his favorite food, JavaBean.</span><br><span class="line">The warehouse has N rooms. The i-th room contains J[i] pounds of JavaBeans and </span><br><span class="line">requires F[i] pounds of cat food. FatMouse does not have to trade for all the </span><br><span class="line">JavaBeans in the room, instead, he may get J[i]* a% pounds of JavaBeans if he pays </span><br><span class="line">F[i]* a% pounds of cat food. Here a is a real number. Now he is assigning this </span><br><span class="line">homework to you: tell him the maximum amount of JavaBeans he can obtain.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The input consists of multiple test cases. Each test case begins with a line </span><br><span class="line">containing two non-negative integers M and N. Then N lines follow, each contains two </span><br><span class="line">non-negative integers J[i] and F[i] respectively. The last test case is followed by </span><br><span class="line">two -1&#39;s. All integers are not greater than 1000.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For each test case, print in a single line a real number accurate up to 3 decimal places, which is the maximum amount of JavaBeans that FatMouse can obtain.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br><span class="line">7 2</span><br><span class="line">4 3</span><br><span class="line">5 2</span><br><span class="line">20 3</span><br><span class="line">25 18</span><br><span class="line">24 15</span><br><span class="line">15 10</span><br><span class="line">-1 -1</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">13.333</span><br><span class="line">31.500</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a classic greedy strategy problem.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cmath"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"vector"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trade</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">double</span> j;</span><br><span class="line">    <span class="keyword">double</span> f;</span><br><span class="line">    <span class="keyword">double</span> rate;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Trade(<span class="keyword">double</span> j, <span class="keyword">double</span> f)&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;j = j;</span><br><span class="line">        <span class="keyword">this</span>-&gt;f = f;</span><br><span class="line">        <span class="keyword">if</span>(j)</span><br><span class="line">            <span class="keyword">this</span>-&gt;rate = f/j;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">this</span>-&gt;rate = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Trade a, Trade b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.rate&gt;b.rate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">double</span> m;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">-1</span>&amp;&amp;n==<span class="number">-1</span>)    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;Trade&gt; <span class="built_in">list</span>;</span><br><span class="line">        <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">            <span class="keyword">double</span> j, f;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; f &gt;&gt; j;</span><br><span class="line">            <span class="built_in">list</span>.emplace_back(j, f);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="built_in">list</span>.<span class="built_in">begin</span>(), <span class="built_in">list</span>.<span class="built_in">end</span>(), cmp);</span><br><span class="line">        <span class="keyword">double</span> <span class="built_in">get</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">size_t</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(m&gt;=<span class="number">0</span>&amp;&amp;i&lt;<span class="built_in">list</span>.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">double</span> pay&#123;&#125;;</span><br><span class="line">            <span class="keyword">if</span>(m&gt;<span class="built_in">list</span>[i].j)</span><br><span class="line">                pay = <span class="built_in">list</span>[i].j;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                pay = m;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">list</span>[i].rate!=<span class="number">-1</span>)</span><br><span class="line">                <span class="built_in">get</span> += <span class="built_in">list</span>[i].rate*pay;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">get</span> += <span class="built_in">list</span>[i].f;</span><br><span class="line">            m -= pay;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.3lf\n"</span>, <span class="built_in">get</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201007%20Quoit%20Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201007%20Quoit%20Design/" class="post-title-link" itemprop="url">HDU 1007 Quoit Design</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:34:33" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Have you ever played quoit in a playground? Quoit is a game in which flat rings are </span><br><span class="line">pitched at some toys, with all the toys encircled awarded.</span><br><span class="line">In the field of Cyberground, the position of each toy is fixed, and the ring is </span><br><span class="line">carefully designed so it can only encircle one toy at a time. On the other hand, to </span><br><span class="line">make the game look more attractive, the ring is designed to have the largest radius. </span><br><span class="line">Given a configuration of the field, you are supposed to find the radius of such a </span><br><span class="line">ring.</span><br><span class="line"></span><br><span class="line">Assume that all the toys are points on a plane. A point is encircled by the ring if </span><br><span class="line">the distance between the point and the center of the ring is strictly less than the </span><br><span class="line">radius of the ring. If two toys are placed at the same point, the radius of the </span><br><span class="line">ring is considered to be 0.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The input consists of several test cases. For each case, the first line contains an integer N (2 &lt;&#x3D; N &lt;&#x3D; 100,000), the total number of toys in the field. Then N lines follow, each contains a pair of (x, y) which are the coordinates of a toy. The input is terminated by N &#x3D; 0.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For each test case, print in one line the radius of the ring required by the Cyberground manager, accurate up to 2 decimal places.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">0 0</span><br><span class="line">1 1</span><br><span class="line">2</span><br><span class="line">1 1</span><br><span class="line">1 1</span><br><span class="line">3</span><br><span class="line">-1.5 0</span><br><span class="line">0 0</span><br><span class="line">0 1.5</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.71</span><br><span class="line">0.00</span><br><span class="line">0.75</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divide and conquer:after sorting, there are 3 possible situations: the endpoints of the shortest radius are both on mid&#39;s left, both on mid&#39;s right, or one on mid&#39;s left and another on mid&#39;s right.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"vector"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cfloat"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cmath"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">double</span> first&#123;&#125;;</span><br><span class="line">    <span class="keyword">double</span> second&#123;&#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Node(<span class="keyword">double</span> first=<span class="number">0.f</span>, <span class="keyword">double</span> second=<span class="number">0.f</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;first = first;</span><br><span class="line">        <span class="keyword">this</span>-&gt;second = second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;a) <span class="keyword">const</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="keyword">this</span>-&gt;first==a.first)</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">this</span>-&gt;second&lt;a.second;</span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">this</span>-&gt;first&lt;a.first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">D</span><span class="params">(Node a, Node b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">pow</span>(a.first-b.first, <span class="number">2</span>)+<span class="built_in">pow</span>(a.second-b.second, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Node toys[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">minD</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(right==left+<span class="number">1</span>)    <span class="keyword">return</span> D(toys[left], toys[right]);</span><br><span class="line">    <span class="keyword">if</span>(left==right) <span class="keyword">return</span> INFINITY;</span><br><span class="line">    <span class="keyword">int</span> mid = (left+right)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> leftRes = minD(left, mid);</span><br><span class="line">    <span class="keyword">double</span> rightRes = minD(mid+<span class="number">1</span>, right);</span><br><span class="line">    <span class="keyword">double</span> res = <span class="built_in">min</span>(leftRes, rightRes);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=mid; i&gt;=left&amp;&amp;toys[mid].first-toys[i].first&lt;=res; --i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=mid+<span class="number">1</span>; j&lt;=right&amp;&amp;toys[j].first-toys[mid].first&lt;=res; ++j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(toys[j].second-toys[mid].second&gt;res)   <span class="keyword">break</span>;</span><br><span class="line">            res = <span class="built_in">min</span>(res, D(toys[i], toys[j]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> n&#123;&#125;;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">if</span>(!n)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i)&#123;</span><br><span class="line">            <span class="keyword">double</span> x, y;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf %lf"</span>, &amp;toys[i].first, &amp;toys[i].second);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(toys+<span class="number">1</span>, toys+n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">double</span> ans = <span class="built_in">sqrt</span>(minD(<span class="number">1</span>, n))/<span class="number">2</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201005%20Number%20Sequence/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201005%20Number%20Sequence/" class="post-title-link" itemprop="url">HDU 1005 Number Sequence</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:34:13" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A number sequence is defined as follows:</span><br><span class="line"></span><br><span class="line">f(1) &#x3D; 1, f(2) &#x3D; 1, f(n) &#x3D; (A * f(n - 1) + B * f(n - 2)) mod 7.</span><br><span class="line"></span><br><span class="line">Given A, B, and n, you are to calculate the value of f(n).</span><br></pre></td></tr></table></figure>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The input consists of multiple test cases. Each test case contains 3 integers A, B </span><br><span class="line">and n on a single line (1 &lt;&#x3D; A, B &lt;&#x3D; 1000, 1 &lt;&#x3D; n &lt;&#x3D; 100,000,000). Three zeros </span><br><span class="line">signal the end of input and this test case is not to be processed.</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For each test case, print the value of f(n) on a single line.</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 1 3</span><br><span class="line">1 2 10</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Unbelievable, &quot;mod 10000&quot; works!</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>||n==<span class="number">2</span>)  <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">10000</span>)  n/=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>; i&lt;=n; ++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = q;</span><br><span class="line">        q = (a*q + b*p)%<span class="number">7</span>;</span><br><span class="line">        p = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a&#123;&#125;;</span><br><span class="line">    <span class="keyword">int</span> b&#123;&#125;;</span><br><span class="line">    <span class="keyword">int</span> n&#123;&#125;;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; n;</span><br><span class="line">        <span class="keyword">if</span>(!a&amp;&amp;!b&amp;&amp;!n)  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; helper(a, b, n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201004%20Let%20the%20Balloon%20Rise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201004%20Let%20the%20Balloon%20Rise/" class="post-title-link" itemprop="url">HDU 1004 Let the Balloon Rise</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:34:05" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Contest time again! How excited it is to see balloons floating around. But to tell </span><br><span class="line">you a secret, the judges&#39; favorite time is guessing the most popular problem. When </span><br><span class="line">the contest is over, they will count the balloons of each color and find the result.</span><br><span class="line"></span><br><span class="line">This year, they decide to leave this lovely job to you.</span><br></pre></td></tr></table></figure>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input contains multiple test cases. Each test case starts with a number N (0 &lt; N &lt;&#x3D; </span><br><span class="line">1000) -- the total number of balloons distributed. The next N lines contain one </span><br><span class="line">color each. The color of a balloon is a string of up to 15 lower-case letters.</span><br><span class="line"></span><br><span class="line">A test case with N &#x3D; 0 terminates the input and this test case is not to be </span><br><span class="line">processed.</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">For each case, print the color of balloon for the most popular problem on a single </span><br><span class="line">line. It is guaranteed that there is a unique solution for each test case.</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">green</span><br><span class="line">red</span><br><span class="line">blue</span><br><span class="line">red</span><br><span class="line">red</span><br><span class="line">3</span><br><span class="line">pink</span><br><span class="line">orange</span><br><span class="line">pink</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">red</span><br><span class="line">pink</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hash map, easy problem.</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"map"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"string"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n&#123;&#125;;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; table;</span><br><span class="line">        <span class="built_in">string</span> color;</span><br><span class="line">        <span class="keyword">int</span> maxTimes = INT_MIN;</span><br><span class="line">        <span class="built_in">string</span> mostBalloon;</span><br><span class="line">        <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; color;</span><br><span class="line">            <span class="keyword">auto</span> it = table.<span class="built_in">find</span>(color);</span><br><span class="line">            <span class="keyword">if</span>(it==table.<span class="built_in">end</span>())</span><br><span class="line">                table.insert(pair&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;(color, <span class="number">1</span>));</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                ++it-&gt;second;</span><br><span class="line">            it = table.<span class="built_in">find</span>(color);</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second&gt;maxTimes)&#123;</span><br><span class="line">                maxTimes = it-&gt;second;</span><br><span class="line">                mostBalloon = it-&gt;first;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; mostBalloon &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201003%20Max%20Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/HDU%201003%20Max%20Sum/" class="post-title-link" itemprop="url">HDU 1003 Max Sum</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-02 22:35:28 / Modified: 23:04:56" itemprop="dateCreated datePublished" datetime="2020-03-02T22:35:28+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a><strong>Problem Description</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given a sequence a[1],a[2],a[3]......a[n], your job is to calculate the max sum of a </span><br><span class="line">sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + </span><br><span class="line">(-1) + 5 + 4 &#x3D; 14.</span><br></pre></td></tr></table></figure>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The first line of the input contains an integer T(1&lt;&#x3D;T&lt;&#x3D;20) which means the number </span><br><span class="line">of test cases. Then T lines follow, each line starts with a number N(1&lt;&#x3D;N&lt;&#x3D;100000), </span><br><span class="line">then N integers followed(all the integers are between -1000 and 1000).</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For each test case, you should output two lines. The first line is &quot;Case #:&quot;, # </span><br><span class="line">means the number of the test case. The second line contains three integers, the Max </span><br><span class="line">Sum in the sequence, the start position of the sub-sequence, the end position of the </span><br><span class="line">sub-sequence. If there are more than one result, output the first one. Output a </span><br><span class="line">blank line between two cases.</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5 6 -1 5 4 -7</span><br><span class="line">7 0 6 -1 1 -6 7 -5</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Case 1:</span><br><span class="line">14 1 4</span><br><span class="line"></span><br><span class="line">Case 2:</span><br><span class="line">7 1 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a classic dynamic programming problem.</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdio"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T&#123;&#125;;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">1</span>; t&lt;=T; ++t)&#123;</span><br><span class="line">        <span class="keyword">int</span> n &#123;&#125;;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSum = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> start;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">end</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; ++i)&#123;</span><br><span class="line">            <span class="keyword">int</span> num;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">            sum += num;</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxSum)&#123;</span><br><span class="line">                maxSum = sum;</span><br><span class="line">                start = left;</span><br><span class="line">                <span class="built_in">end</span> = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">                left = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d:\n"</span>, t);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; maxSum &lt;&lt; <span class="string">" "</span> &lt;&lt; start &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="built_in">end</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>(t!=T) <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/HDU%201160%20FatMouse's%20Speed/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,7 +730,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-02 20:25:42 / Modified: 20:58:19" itemprop="dateCreated datePublished" datetime="2020-03-02T20:25:42+08:00">2020-03-02</time>
+              <time title="Created: 2020-03-02 20:25:42 / Modified: 23:35:25" itemprop="dateCreated datePublished" datetime="2020-03-02T20:25:42+08:00">2020-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hdu-solutions/" itemprop="url" rel="index"><span itemprop="name">hdu solutions</span></a>
+                </span>
             </span>
 
           
@@ -199,77 +759,6 @@
 
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Mouse</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="keyword">int</span> speed;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="built_in">Mouse</span> *pre;</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">Mouse</span><span class="params">(<span class="keyword">int</span> weight=<span class="number">0</span>, <span class="keyword">int</span> speed=<span class="number">0</span>, <span class="keyword">int</span> index=<span class="number">0</span>, <span class="built_in">Mouse</span> *pre=<span class="literal">nullptr</span>)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;weight = weight;</span><br><span class="line">        <span class="keyword">this</span>-&gt;speed = speed;</span><br><span class="line">        <span class="keyword">this</span>-&gt;index = index;</span><br><span class="line">        <span class="keyword">this</span>-&gt;pre = pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmpWeight</span><span class="params">(<span class="built_in">Mouse</span> *a, <span class="built_in">Mouse</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a-&gt;weight&gt;b-&gt;weight);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="built_in">Mouse</span>*&gt; helper, <span class="built_in">Mouse</span> *mouse, <span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> high = len;</span><br><span class="line">    <span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(helper[mid]-&gt;speed&gt;mouse-&gt;speed)</span><br><span class="line">            high = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(helper[mid]-&gt;speed&lt;mouse-&gt;speed)</span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pair&lt;int, Mouse*&gt; lis(const vector&lt;Mouse*&gt; &amp;mouses)&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> n = mouses.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">Mouse</span>*&gt; <span class="title">helper</span><span class="params">(n+<span class="number">1</span>)</span></span>;</span><br><span class="line">    helper[<span class="number">1</span>] = mouses[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(mouses[i]-&gt;speed&gt;helper[len]-&gt;speed)&#123;</span><br><span class="line">            mouses[i]-&gt;pre = helper[len];</span><br><span class="line">            helper[++len] = mouses[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> pos = binarySearch(helper, mouses[i], len);</span><br><span class="line">            mouses[i]-&gt;pre = helper[pos<span class="number">-1</span>];</span><br><span class="line">            helper[pos] = mouses[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> make_pair(len, helper[len]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> weight, speed;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">Mouse</span>*&gt; mouses;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;weight&gt;&gt;speed)&#123;</span><br><span class="line">        <span class="built_in">Mouse</span> *newMouse = <span class="keyword">new</span> <span class="built_in">Mouse</span>(weight, speed, index++);</span><br><span class="line">        mouses.emplace_back(newMouse);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(index==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(mouses.<span class="built_in">begin</span>(), mouses.<span class="built_in">end</span>(), cmpWeight);</span><br><span class="line">    pair&lt;<span class="keyword">int</span>, <span class="built_in">Mouse</span>*&gt; res = lis(mouses);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, res.first);</span><br><span class="line">    <span class="built_in">Mouse</span> *pointer = res.second;</span><br><span class="line">    <span class="keyword">while</span>(pointer!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pointer-&gt;index);</span><br><span class="line">        pointer = pointer-&gt;pre;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;p: mouses)   </span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lining Hoo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hlnBlog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-03-02 19:53:02 / Modified: 17:44:35" itemprop="dateCreated datePublished" datetime="2020-03-02T19:53:02+08:00">2020-03-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
@@ -352,9 +841,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
