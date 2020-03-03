@@ -28,7 +28,7 @@
 <meta property="og:description" content="Introduction​            Let’s consider a problem as follow. ​            Given serveral points, $(x_0, y_0), (x_1, y_1), \dots , (x_n, y_n)$, find a polynomial P(x) that satisfies:   P(x_i) &#x3D; y_i, (i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-03T03:24:41.499Z">
-<meta property="article:modified_time" content="2020-03-03T03:51:13.293Z">
+<meta property="article:modified_time" content="2020-03-03T06:48:16.286Z">
 <meta property="article:author" content="Lining Hoo">
 <meta property="article:tag" content="numerial analysis">
 <meta property="article:tag" content="interpolation">
@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-03 11:24:41 / Modified: 11:51:13" itemprop="dateCreated datePublished" datetime="2020-03-03T11:24:41+08:00">2020-03-03</time>
+              <time title="Created: 2020-03-03 11:24:41 / Modified: 14:48:16" itemprop="dateCreated datePublished" datetime="2020-03-03T11:24:41+08:00">2020-03-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,7 +227,7 @@ L_n(x_k) =
 <h3 id="Remainder-term"><a href="#Remainder-term" class="headerlink" title="Remainder term"></a>Remainder term</h3><p>​            Suppose $x_0, x_1, … , x_n$ are distinct numbers in the interval $[a, b]$ and $f ∈ Cn+1[a, b]$. Then, for each $x$ in $[a, b]$, a number $ξ(x)$ (generally unknown) between $x_0, x_1, … , x_n$, and hence in $(a, b)$, exists with</p>
 <script type="math/tex; mode=display">
 f(x) = P_n(x) + \frac{f^{(n+1)}(\xi (x))}{(n+1)!}(x-x_0)(x-x_1)\dots (x-x_n)</script><p>​            <strong>Proof</strong></p>
-<p>​                        Let Remainder term $R_n(x) = k(x)(x-x_0)(x-x_1)\dots (x-x_n)$</p>
+<p>​                        Let remainder term $R_n(x) = k(x)(x-x_0)(x-x_1)\dots (x-x_n)$</p>
 <script type="math/tex; mode=display">
 f(x) = P_n(x) + R_n(x)</script><p>​                        Define the function $g$ for $t$ in $[a, b]$ by</p>
 <script type="math/tex; mode=display">
@@ -235,9 +235,9 @@ g(t) = f(t) - P_n(t) - k(x)(t-x_0)(t-x_1)\dots (t-x_n)</script><p>​           
 <script type="math/tex; mode=display">
 g(x_k) = f(x_k) - P_n(x_k) - 0 = 0</script><p>​                        Morover, for any $x$</p>
 <script type="math/tex; mode=display">
-g(x) = f(x) - P_n(x) - R_n(x) = 0</script><p>​                        By Generalized Rolle’s Theorem,  there exists a number $ξ$ in $(a, b)$ for which </p>
-<p>​                                                                                <script type="math/tex">g(n+1) (\xi) = 0</script></p>
-<p>​                        Thus, </p>
+g(x) = f(x) - P_n(x) - R_n(x) = 0</script><p>​                        By Generalized Rolle’s Theorem,  there exists a number $ξ$ in $(a, b)$ for which                         </p>
+<script type="math/tex; mode=display">
+g(n+1) (\xi) = 0</script><p>​                        Thus, </p>
 <script type="math/tex; mode=display">
 g^{(n+1)}(\xi) = f^{(n+1)}(\xi) - P_n^{(n+1)}(\xi) - (n+1)!k(x)\\
 = f^{(n+1)}(\xi) - (n+1)!k(x) = 0</script><script type="math/tex; mode=display">
