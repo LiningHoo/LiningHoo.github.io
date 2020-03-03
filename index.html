@@ -21,29 +21,26 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="hlnBlog">
+<meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="hlnBlog">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-02T14:06:09.000Z">
-<meta property="article:modified_time" content="2020-03-02T14:07:12.360Z">
 <meta property="article:author" content="Lining Hoo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/">
+<link rel="canonical" href="http://yoursite.com/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false
   };
 </script>
 
-  <title>tags | hlnBlog
-  </title>
+  <title>hlnBlog</title>
   
 
 
@@ -148,53 +145,90 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="en">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
-
-<div class="post-meta">
-  
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              2 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/interpolation/" style="font-size: 12px; color: #ccc">interpolation</a> <a href="/tags/numerial-analysis/" style="font-size: 12px; color: #ccc">numerial analysis</a>
-            </div>
-          </div>
         
-      </div>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Lagrange-Interpolation-Polynomial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lining Hoo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hlnBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/03/Lagrange-Interpolation-Polynomial/" class="post-title-link" itemprop="url">Lagrange Interpolation Polynomial</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-03 11:24:41" itemprop="dateCreated datePublished" datetime="2020-03-03T11:24:41+08:00">2020-03-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-      
+          <h3 id="Introdunction"><a href="#Introdunction" class="headerlink" title="Introdunction"></a>Introdunction</h3><p>​            Let’s consider a problem as follow.</p>
+<p>​            Given serveral points, $(x_0, y_0), (x_1, y_1), \dots , (x_n, y_n)$, find a polynomial P(x) that satisfies:<br>$$<br>P(x_i) = y_i, (i = 1, 2, \dots , n)<br>$$</p>
+<h3 id="Lagrange’s-method"><a href="#Lagrange’s-method" class="headerlink" title="Lagrange’s method"></a>Lagrange’s method</h3><p>​        Let<br>$$<br>l_j(x) = \prod_{i=0\i\ne j}^{n}\frac{(x-x_i)}{(x_j-x_i)}  \<br>$$<br>​        Obviously,<br>$$<br>l_j(x_i) =<br>    \begin{cases}<br>        1, &amp; i = j \<br>        0, &amp; i\ne j<br>    \end{cases}<br>$$<br>​        According to the features of $l_j(x)$ above, define<br>$$<br>L_n(x) = \sum_{j=0}^{n}y_j\prod_{i=0\i\ne j}^{n}\frac{x-x_i}{x_j-x_i}<br>$$<br>​        For each $k = 0, 1, \dots, n$<br>$$<br>L_n(x_k) =<br>        \begin{equation}<br>            \sum_{j=0}^{n}y_j\prod_{i=0\i\ne j}^{n}\frac{x_k-x_i}{x_j-x_i} = y_k<br>        \end{equation}<br>$$<br>​        Thus, polynomial $P(x) = L_n(x)$ is found .</p>
+<h3 id="Remainder-term"><a href="#Remainder-term" class="headerlink" title="Remainder term"></a>Remainder term</h3><p>​            Suppose $x_0, x_1, … , x_n$ are distinct numbers in the interval $[a, b]$ and $f ∈ Cn+1[a, b]$. Then, for each $x$ in $[a, b]$, a number $ξ(x)$ (generally unknown) between $x_0, x_1, … , x_n$, and hence in $(a, b)$, exists with<br>$$<br>f(x) = P_n(x) + \frac{f^{(n+1)}(\xi (x))}{(n+1)!}(x-x_0)(x-x_1)\dots (x-x_n)<br>$$<br>​            <strong>Proof</strong></p>
+<p>​                        Let Remainder term $R_n(x) = k(x)(x-x_0)(x-x_1)\dots (x-x_n)$<br>$$<br>f(x) = P_n(x) + R_n(x)<br>$$<br>​                        Define the function $g$ for $t$ in $[a, b]$ by<br>$$<br>g(t) = f(t) - P_n(t) - k(x)(t-x_0)(t-x_1)\dots (t-x_n)<br>$$<br>​                        For each $k = 0, 1, 2, \dots, n$<br>$$<br>g(x_k) = f(x_k) - P_n(x_k) - 0 = 0<br>$$<br>​                        Morover, for any $x$<br>$$<br>g(x) = f(x) - P_n(x) - R_n(x) = 0<br>$$<br>​                        By Generalized Rolle’s Theorem,  there exists a number $ξ$ in $(a, b)$ for which </p>
+<p>​                                                                                $$g(n+1) (\xi) = 0$$</p>
+<p>​                        Thus,<br>$$<br>g^{(n+1)}(\xi) = f^{(n+1)}(\xi) - P_n^{(n+1)}(\xi) - (n+1)!k(x)\<br>= f^{(n+1)}(\xi) - (n+1)!k(x) = 0<br>$$</p>
+<p>$$<br>k(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}<br>$$</p>
+<p>​                        Finally,<br>$$<br>f(x) = P_n(x) + \frac{f^{(n+1)}(\xi (x))}{(n+1)!}(x-x_0)(x-x_1)\dots (x-x_n)<br>$$</p>
+
       
     </div>
-    
 
     
     
     
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
+
+  
+
 
 
           </div>
