@@ -177,8 +177,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-03-03 11:24:41" itemprop="dateCreated datePublished" datetime="2020-03-03T11:24:41+08:00">2020-03-03</time>
+              <time title="Created: 2020-03-03 11:24:41 / Modified: 11:38:04" itemprop="dateCreated datePublished" datetime="2020-03-03T11:24:41+08:00">2020-03-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,9 +218,7 @@ l_j(x_i) =
 L_n(x) = \sum_{j=0}^{n}y_j\prod_{i=0\\i\ne j}^{n}\frac{x-x_i}{x_j-x_i}</script><p>​        For each $k = 0, 1, \dots, n$ </p>
 <script type="math/tex; mode=display">
 L_n(x_k) = 
-        \begin{equation}
-            \sum_{j=0}^{n}y_j\prod_{i=0\\i\ne j}^{n}\frac{x_k-x_i}{x_j-x_i} = y_k
-        \end{equation}</script><p>​        Thus, polynomial $P(x) = L_n(x)$ is found .</p>
+            \sum_{j=0}^{n}y_j\prod_{i=0\\i\ne j}^{n}\frac{x_k-x_i}{x_j-x_i} = y_k</script><p>​        Thus, polynomial $P(x) = L_n(x)$ is found .</p>
 <h3 id="Remainder-term"><a href="#Remainder-term" class="headerlink" title="Remainder term"></a>Remainder term</h3><p>​            Suppose $x_0, x_1, … , x_n$ are distinct numbers in the interval $[a, b]$ and $f ∈ Cn+1[a, b]$. Then, for each $x$ in $[a, b]$, a number $ξ(x)$ (generally unknown) between $x_0, x_1, … , x_n$, and hence in $(a, b)$, exists with</p>
 <script type="math/tex; mode=display">
 f(x) = P_n(x) + \frac{f^{(n+1)}(\xi (x))}{(n+1)!}(x-x_0)(x-x_1)\dots (x-x_n)</script><p>​            <strong>Proof</strong></p>
@@ -424,6 +423,63 @@ f(x) = P_n(x) + \frac{f^{(n+1)}(\xi (x))}{(n+1)!}(x-x_0)(x-x_1)\dots (x-x_n)</sc
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
